@@ -102,16 +102,26 @@ dependencies {
 compose.desktop {
     application {
         mainClass = "org.alonsitos.chat.MainKt"
+        // Ensure modules are available during development run
+        jvmArgs += listOf(
+            "--add-modules", "java.management,jdk.management",
+            "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        )
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "AlonsitosChat"
             packageVersion = "1.0.0"
 
+            // Include essential modules for Firebase and networking
+            modules("java.management", "jdk.management", "java.naming", "java.desktop", "jdk.unsupported", "java.instrument")
+            includeAllModules = false 
+
             macOS {
                 bundleID = "org.alonsitos.chat"
-                // This helps bypass some Gatekeeper issues by being explicit
                 dockName = "Alonsitos Chat"
+                // Ensure modules are available in the packaged app
+                jvmArgs("--add-modules", "java.management,jdk.management")
             }
 
             windows {
