@@ -105,8 +105,23 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "org.alonsitos.chat"
+            packageName = "AlonsitosChat"
             packageVersion = "1.0.0"
+
+            macOS {
+                bundleID = "org.alonsitos.chat"
+                // This helps bypass some Gatekeeper issues by being explicit
+                dockName = "Alonsitos Chat"
+            }
+
+            windows {
+                menu = true
+                shortcut = true
+            }
+
+            buildTypes.release.proguard {
+                isEnabled.set(false) // Disable obfuscation to prevent Firebase runtime issues
+            }
         }
     }
 }
