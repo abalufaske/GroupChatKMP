@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "458313722101",
+    "project_id": "family-chat-b16b3",
+    "storage_bucket": "family-chat-b16b3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458313722101:android:74d95277dc4ddbff923dbc",
+        "android_client_info": {
+          "package_name": "org.alonsitos.chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_g2anFLKhHaVTuZUGk-pyYFa6wKt3l1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
